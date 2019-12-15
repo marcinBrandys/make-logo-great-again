@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+    <div class="content-wrapper">
+      <div class="tile" *ngIf="isMenuVisible">
+        <div class="tile-header">
+          <h3>{{translations['text_pickup_cards']}}</h3>
+        </div>
+        <div class="tile-content tile-content-pickup-area"
+             [id]="gameService.availableCardsId"
+             cdkDropList
+             cdkDropListOrientation="horizontal"
+             cdkDropListSortingDisabled
+             [cdkDropListData]="gameService.availableCards"
+             [cdkDropListConnectedTo]="gameService.getDropListConnectedIds()"
+             (cdkDropListDropped)="drop($event)">
+          <div *ngFor="let availableCard of gameService.availableCards" class="card card-back"
+               [style.marginTop.rem]="availableCard.marginY"
+               [style.marginBottom.rem]="availableCard.marginY"
+               (mousedown)="onCdkTouch()"
+               [cdkDragData]="availableCard"
+               cdkDrag>
+            <span>?</span>
+          </div>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tile-header">
+          <h3>{{translations['text_logo']}}</h3>
+        </div>
+        <div class="tile-content">
+          <div *ngFor="let logoItem of gameService.logo" class="card-placeholder">
+            <div
+              [id]="logoItem.id"
+              cdkDropList
+              [cdkDropListData]="logoItem.cards"
+              (cdkDropListDropped)="drop($event)">
+              <img *ngFor="let card of logoItem.cards" class="card card-front animation-card-show"
+                   [src]="card.imgSrc" [alt]="translations['text_card_alt']">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="tile">
+        <div class="tile-header">
+          <h3>{{translations['text_score']}}</h3>
+        </div>
+        <div class="tile-content">
+          <h4 #score>{{gameService.timer}}</h4>
+        </div>
+      </div>
+      <div class="tile" *ngIf="isMenuVisible && gameService.cardToFind">
+        <div class="tile-header">
+          <h3>{{translations['text_find_card']}}</h3>
+        </div>
+        <div class="tile-content">
+          <img class="card card-front"
+               [src]="gameService.cardToFind.imgSrc" [alt]="translations['text_card_alt']">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

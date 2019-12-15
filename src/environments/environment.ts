@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  answer: 'zoovu',
+  penalty: 10, // sec
+  newGameTimeout: 10000 // ms
 };
 
 /*

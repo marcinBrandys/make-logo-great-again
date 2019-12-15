@@ -1,0 +1,91 @@
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background-color: $background-color;
+}
+.container {
+  display: block;
+  margin: auto;
+  width: calc(100% - 2rem);
+  padding: 1rem;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 100%;
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 0 1 100%;
+}
+@media (min-width: 1200px) {
+  .container { max-width: 1170px; }
+  .content-wrapper { flex-basis: 80%; }
+  .sidebar { flex-basis: 20%; }
+}
+.tile {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+  border-radius: $radius;
+  background-color: $white;
+  box-shadow: $shadow;
+  .tile-header {
+    padding: 0.1rem 1rem;
+    background-color: $grey;
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+  }
+  .tile-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1rem;
+    background-color: $white;
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+    &.tile-content-pickup-area {
+      min-height: calc(180px + 4rem);
+    }
+  }
+}
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+  width: 150px;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  &.card-front {
+    background-color: $grey;
+    margin: 0;
+  }
+  &.card-back {
+    background-color: $primary;
+    border: 2px solid darken($primary, 5%);
+    span {
+      color: $white;
+      font-size: 5rem;
+    }
+  }
+}
+.card-placeholder {
+  height: 180px;
+  width: 150px;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  border: 2px dotted $grey-2;
+  border-radius: $radius;
+}

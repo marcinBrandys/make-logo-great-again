@@ -1,0 +1,13 @@
+.cdk-drag {
+  cursor: grab;
+}
+.cdk-drop-list {
+  height: 100%;
+}
+.card-placeholder {
+  .cdk-drop-list-dragging {
+    .card {
+      margin: 0 !important;
+    }
+  }
+}

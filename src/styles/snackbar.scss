@@ -1,0 +1,9 @@
+.mat-snack-bar-container {
+  background-color: $primary;
+  .mat-simple-snackbar, .mat-button-wrapper {
+    color: $white;
+    span {
+      font-size: 1rem;
+    }
+  }
+}
