@@ -6,7 +6,7 @@ The user should pick a card from the Pickup Cards a​rea and try to put it into
 
 For example: 
 
-If there is a 'Z' symbol in Pickup Cards area, user should guess where is that symbol and moved the card into first slot, because 'Z' is at the first position in Zoovu Logo.
+If there is a 'Z' symbol in Find this card area, user should guess where is that symbol in Pickup Cards area and moved the card into first slot, because 'Z' is at the first position in Zoovu Logo.
 
 ## Entry point
 
