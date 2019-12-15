@@ -11,3 +11,4 @@ If there is a 'Z' symbol in Find this card area, user should guess where is that
 ## Entry point
 
 Entry point (i-want-to-play-a-game.html) has been included in /dist directory.
+To open this app you can just open entry point page in web browser. There is no need to use extra servers.
